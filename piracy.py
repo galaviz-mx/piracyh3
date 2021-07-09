@@ -2,6 +2,7 @@
 import geopandas as gpd
 import folium
 import streamlit as st
+from streamlit_folium import folium_static
 
 st.set_page_config(layout='centered') #centered or wide
 header_container = st.beta_container()
@@ -46,7 +47,7 @@ with header_container:
     )
 
     m.add_child(data_style)
-    st.write(m)
+    folium_static(m)
 
     st.write('Fuentes:  \n https://msi.nga.mil/Piracy  \n https://eng.uber.com/h3/  \n https://spatialthoughts.com/2020/07/01/point-in-polygon-h3-geopandas/')
     
